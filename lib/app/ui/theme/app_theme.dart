@@ -5,7 +5,6 @@ final ThemeData appThemeData = ThemeData(
   primaryColor: ColorConstants.primaryColor,
   accentColor: ColorConstants.primaryColor.withOpacity(0.5),
   backgroundColor: ColorConstants.whiteColor,
-
   // splashColor: Colors.purpleAccent,
   // highlightColor: Colors.purple,
   fontFamily: 'Georgia',

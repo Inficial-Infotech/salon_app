@@ -1,11 +1,12 @@
-import 'package:get/get.dart';
-import 'package:salon_app/app/ui/android/Auth/sign_in.dart';
-import 'package:salon_app/app/ui/android/Auth/sign_up.dart';
-import 'package:salon_app/app/ui/android/home/discover/notification_screen.dart';
-import 'package:salon_app/app/ui/android/home/discover/salon_detail.dart';
-import 'package:salon_app/app/ui/android/home/home_page.dart';
+import 'dart:math';
 
-import '../ui/android/home/home_page.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:salon_app/app/ui/screenDesign/Auth/sign_in.dart';
+import 'package:salon_app/app/ui/screenDesign/Auth/sign_up.dart';
+import 'package:salon_app/app/ui/screenDesign/home/discover/notification_screen.dart';
+import 'package:salon_app/app/ui/screenDesign/home/discover/salon_detail.dart';
+import 'package:salon_app/app/ui/screenDesign/home/home_page.dart';
 part './app_routes.dart';
 
 class AppPages {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salon_app/app/data/model/bottomSheetModel/bottom_sheet_model.dart';
 import 'package:salon_app/app/translations/string_constant/constants.dart';
-import 'package:salon_app/app/ui/android/Auth/sign_in.dart';
+import 'package:salon_app/app/ui/screenDesign/Auth/sign_in.dart';
 import 'package:salon_app/app/ui/constants/image_constants.dart';
 import 'package:salon_app/app/ui/theme/app_colors.dart';
 import 'package:salon_app/app/ui/theme/app_text_theme.dart';

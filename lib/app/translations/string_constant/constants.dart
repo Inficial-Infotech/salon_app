@@ -1,4 +1,4 @@
-import 'package:salon_app/app/ui/android/Auth/sign_in.dart';
+import 'package:salon_app/app/ui/screenDesign/Auth/sign_in.dart';
 
 const LogIn = "LogIn";
 const ForgotPassword = "Forgot Password ?";

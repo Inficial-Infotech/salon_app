@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:salon_app/app/ui/android/home/home_page.dart';
+import 'package:salon_app/app/ui/screenDesign/home/home_page.dart';
 import 'package:salon_app/app/data/model/user_model.dart';
 import 'package:salon_app/app/ui/utils/dialogs.dart';
 

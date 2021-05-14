@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:salon_app/app/data/model/posts_model.dart';
-import 'package:salon_app/app/data/provider/myApiClient.dart';
+import 'file:///D:/Flutter%20Work/Flutter%20Projects/salon_app/lib/app/data/dioClient/myApiClient.dart';
 
 class NotifyController extends GetxController {
   List<PostsModel> postsList = [];

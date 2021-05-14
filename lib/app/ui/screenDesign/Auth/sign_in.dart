@@ -1,12 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:salon_app/app/controller/auth_controller/signin_controller.dart';
 import 'package:salon_app/app/routes/app_pages.dart';
 import 'package:salon_app/app/translations/string_constant/constants.dart';
-import 'package:salon_app/app/ui/android/Auth/sign_up.dart';
-import 'package:salon_app/app/ui/android/home/home_page.dart';
+import 'package:salon_app/app/ui/screenDesign/Auth/sign_up.dart';
+import 'package:salon_app/app/ui/screenDesign/home/home_page.dart';
+import 'package:salon_app/app/ui/constants/EnumConstants.dart';
 import 'package:salon_app/app/ui/constants/image_constants.dart';
 import 'package:salon_app/app/ui/theme/app_colors.dart';
 import 'package:salon_app/app/ui/theme/app_text_theme.dart';
