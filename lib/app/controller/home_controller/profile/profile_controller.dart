@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:salon_app/app/data/model/bottomSheetModel/bottom_sheet_model.dart';
 import 'package:salon_app/app/data/model/user_model.dart';
+import 'package:salon_app/app/ui/utils/pref_utils.dart';
 
 class ProfileController extends GetxController {
   File profileImage;
@@ -30,9 +31,7 @@ class ProfileController extends GetxController {
   }
 
   fetchData() {
-    final box = GetStorage();
-    var jsonData = box.read("userData");
-    user = UserModel.fromJson(jsonData);
+    user = PrefUtils.getInstance.readUserData(PrefUtils.getInstance.userData);
   }
 
   setSelectedImage(File img) {

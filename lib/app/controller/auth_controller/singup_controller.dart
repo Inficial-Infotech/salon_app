@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:salon_app/app/data/model/user_model.dart';
 import 'package:salon_app/app/ui/utils/dialogs.dart';
+import 'package:salon_app/app/ui/utils/pref_utils.dart';
 
 class SignUpController extends GetxController {
   final TextEditingController nameController = TextEditingController();
@@ -33,11 +34,20 @@ class SignUpController extends GetxController {
     user.password = passwordController.text;
     user.dob = dobController.text;
     user.address = addressController.text;
-    signUpBox.write("userData", user.toJson()).then((value) {
-      Future.delayed(Duration(milliseconds: 500), () {
-        showToast(msg: "Sign Up Successfully done!!");
-      });
-      Get.back();
+
+    PrefUtils.getInstance
+        .writeUserData(PrefUtils.getInstance.userData, user.toJson());
+    Future.delayed(Duration(milliseconds: 500), () {
+      showToast(msg: "Sign Up Successfully done!!");
     });
+    Get.back();
+    // PrefUtils.getInstance
+    //     .writeData(PrefUtils.getInstance.userData, user.toJson())
+    //     .then((value) {
+    //   Future.delayed(Duration(milliseconds: 500), () {
+    //     showToast(msg: "Sign Up Successfully done!!");
+    //   });
+    //   Get.back();
+    // });
   }
 }

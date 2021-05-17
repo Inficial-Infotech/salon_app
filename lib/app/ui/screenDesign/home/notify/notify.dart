@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:salon_app/app/controller/home_controller/notify_controllers/notify_controller.dart';
+import 'package:salon_app/app/data/model/new_api.dart';
 import 'package:salon_app/app/data/model/posts_model.dart';
 import 'package:salon_app/app/ui/theme/app_colors.dart';
 import 'package:salon_app/app/ui/theme/app_text_theme.dart';
@@ -88,7 +89,7 @@ class Notify extends StatelessWidget {
     );
   }
 
-  getItem(PostsModel model) {
+  getItem(NewApi model) {
     return Container(
       padding: EdgeInsets.only(bottom: getSize(20)),
       margin: EdgeInsets.only(top: getSize(10)),
@@ -124,7 +125,7 @@ class Notify extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    model.title,
+                    model.name,
                     overflow: TextOverflow.ellipsis,
                     style: blackBold16TextStyle,
                   ),

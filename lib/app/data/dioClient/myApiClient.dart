@@ -2,8 +2,6 @@ import 'package:salon_app/app/data/dioClient/api_request.dart';
 import 'package:salon_app/app/data/model/posts_model.dart';
 import 'package:salon_app/app/ui/constants/ApiConstants.dart';
 
-const baseUrl = 'https://jsonplaceholder.typicode.com/posts/';
-
 class MyApiClient {
   void getPostsList({
     int pagination = 50,

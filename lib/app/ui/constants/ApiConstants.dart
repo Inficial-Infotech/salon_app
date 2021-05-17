@@ -1,5 +1,6 @@
-
 class ApiConstants {
+  static const baseUrl = 'https://api.instantwebtools.net/v1/passenger?';
+
   static const baseURL =
       "https://jsonplaceholder.typicode.com/posts?_start=0&_limit=";
 
