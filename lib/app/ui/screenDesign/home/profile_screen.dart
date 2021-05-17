@@ -17,48 +17,46 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstants.bgColor,
-      body: Padding(
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(getSize(30)),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: getSize(20),
-              ),
-              getProfileImage(context),
-              SizedBox(
-                height: getSize(15),
-              ),
-              Text(
-                controller.user.userName,
-                style: black18TitleTextStyle,
-              ),
-              SizedBox(
-                height: getSize(15),
-              ),
-              Text(
-                controller.user.emailId,
-                style: gery16TextStyle,
-              ),
-              SizedBox(
-                height: getSize(15),
-              ),
-              getFirstContainer(),
-              SizedBox(
-                height: getSize(20),
-              ),
-              getSecondContainer(),
-              SizedBox(
-                height: getSize(20),
-              ),
-              getLanguageTranslationContainer(context),
-              SizedBox(
-                height: getSize(20),
-              ),
-              getLogoutContainer()
-            ],
-          ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: getSize(20),
+            ),
+            getProfileImage(context),
+            SizedBox(
+              height: getSize(15),
+            ),
+            Text(
+              controller.user.userName,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            SizedBox(
+              height: getSize(15),
+            ),
+            Text(
+              controller.user.emailId,
+              style: Theme.of(context).textTheme.bodyText2,
+            ),
+            SizedBox(
+              height: getSize(15),
+            ),
+            getFirstContainer(context),
+            SizedBox(
+              height: getSize(20),
+            ),
+            getSecondContainer(context),
+            SizedBox(
+              height: getSize(20),
+            ),
+            getLanguageTranslationContainer(context),
+            SizedBox(
+              height: getSize(20),
+            ),
+            getLogoutContainer(context)
+          ],
         ),
       ),
     );
@@ -79,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                   // shape: BoxShape.circle,
                   borderRadius: BorderRadius.circular(getSize(60)),
                   color: ColorConstants.primaryColor,
-                  boxShadow: getBoxShadow(),
+                  boxShadow: getBoxShadow(context),
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(getSize(60)),
@@ -128,8 +126,8 @@ class ProfileScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             getSize(25),
           ),
-          color: ColorConstants.whiteColor,
-          boxShadow: getBoxShadow()),
+          color: Theme.of(context).backgroundColor,
+          boxShadow: getBoxShadow(context)),
       child: Column(
         children: [
           getVariousOption(
@@ -150,15 +148,15 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Container getLogoutContainer() {
+  Container getLogoutContainer(context) {
     return Container(
       padding: EdgeInsets.all(getSize(20)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
             getSize(25),
           ),
-          color: ColorConstants.whiteColor,
-          boxShadow: getBoxShadow()),
+          color: Theme.of(context).backgroundColor,
+          boxShadow: getBoxShadow(context)),
       child: Column(
         children: [
           getVariousOption(
@@ -172,15 +170,15 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Container getSecondContainer() {
+  Container getSecondContainer(context) {
     return Container(
       padding: EdgeInsets.all(getSize(20)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
             getSize(25),
           ),
-          color: ColorConstants.whiteColor,
-          boxShadow: getBoxShadow()),
+          color: Theme.of(context).backgroundColor,
+          boxShadow: getBoxShadow(context)),
       child: Column(
         children: [
           getVariousOption(
@@ -202,15 +200,15 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Container getFirstContainer() {
+  Container getFirstContainer(context) {
     return Container(
       padding: EdgeInsets.all(getSize(20)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
             getSize(25),
           ),
-          color: ColorConstants.whiteColor,
-          boxShadow: getBoxShadow()),
+          color: Theme.of(context).backgroundColor,
+          boxShadow: getBoxShadow(context)),
       child: Column(
         children: [
           getVariousOption(icon: Icons.payment, text: PaymentMethods.tr),

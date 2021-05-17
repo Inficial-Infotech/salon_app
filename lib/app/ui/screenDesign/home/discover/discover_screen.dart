@@ -3,10 +3,13 @@ import 'package:get/get.dart';
 import 'package:salon_app/app/controller/home_controller/discover/discover_controller.dart';
 import 'package:salon_app/app/ui/constants/image_constants.dart';
 import '../../../theme/app_colors.dart';
+import '../../../theme/app_colors.dart';
 import '../../../theme/app_text_theme.dart';
 import '../../../utils/common_textfield.dart';
 import '../../../utils/math_utils.dart';
 import 'package:salon_app/app/routes/app_pages.dart';
+
+import '../../../utils/math_utils.dart';
 // import 'package:salon_app/app/routes/app_routes.dart';
 
 class DiscoverScreen extends StatelessWidget {
@@ -16,6 +19,7 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).backgroundColor,
         body: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: getSize(20)),
             child: GetBuilder(
@@ -29,17 +33,19 @@ class DiscoverScreen extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: "Hi ",
-                            style: black16TextStyle.copyWith(
-                                fontSize: getSize(20),
-                                fontWeight: FontWeight.bold),
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(fontWeight: FontWeight.w700),
                             children: <TextSpan>[
                               TextSpan(
                                 text: "Theresa Cohen,",
-                                style: black16TextStyle.copyWith(
-                                  fontSize: getSize(20),
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorConstants.primaryColor,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline1
+                                    .copyWith(
+                                        fontWeight: FontWeight.w700,
+                                        color: ColorConstants.primaryColor),
                               ),
                             ],
                           ),
@@ -64,7 +70,7 @@ class DiscoverScreen extends StatelessWidget {
                         ),
                         Text(
                           "301 Dorthy Walks,Chicago,Us.",
-                          style: black16TextStyle,
+                          style: Theme.of(context).textTheme.bodyText1,
                         )
                       ],
                     ),
@@ -114,7 +120,7 @@ class DiscoverScreen extends StatelessWidget {
     );
   }
 
-  getWidget() {
+  getWidget(context) {
     return Column(
       children: [
         Row(
@@ -122,12 +128,14 @@ class DiscoverScreen extends StatelessWidget {
           children: [
             Text(
               "Best Specialists",
-              style: black18TitleTextStyle,
+              style: Theme.of(context).textTheme.headline4,
             ),
             Text(
               "View all",
-              style:
-                  black16TextStyle.copyWith(color: ColorConstants.primaryColor),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(color: ColorConstants.primaryColor),
             )
           ],
         ),
@@ -170,20 +178,13 @@ class DiscoverScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 5),
-                          child: Text(
-                            "Joseph Drake",
-                            style: black18TitleTextStyle.copyWith(
-                                fontSize: getSize(16)),
-                          ),
+                          child: Text("Joseph Drake",
+                              style: Theme.of(context).textTheme.headline5),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 5),
-                          child: Text(
-                            "Makeup Artist",
-                            style: black16TextStyle.copyWith(
-                                fontSize: getSize(13),
-                                color: ColorConstants.greyText),
-                          ),
+                          child: Text("Makeup Artist",
+                              style: Theme.of(context).textTheme.bodyText1),
                         ),
                         SizedBox(
                           height: getSize(10),
@@ -202,12 +203,14 @@ class DiscoverScreen extends StatelessWidget {
           children: [
             Text(
               "Special Offers",
-              style: black18TitleTextStyle,
+              style: Theme.of(context).textTheme.headline4,
             ),
             Text(
               "View all",
-              style:
-                  black16TextStyle.copyWith(color: ColorConstants.primaryColor),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(color: ColorConstants.primaryColor),
             )
           ],
         ),
@@ -250,18 +253,13 @@ class DiscoverScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 5),
                         child: Text(
                           "Joseph Drake",
-                          style: black18TitleTextStyle.copyWith(
-                              fontSize: getSize(16)),
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          "Makeup Artist",
-                          style: black16TextStyle.copyWith(
-                              fontSize: getSize(13),
-                              color: ColorConstants.greyText),
-                        ),
+                        child: Text("Makeup Artist",
+                            style: Theme.of(context).textTheme.bodyText1),
                       ),
                       SizedBox(
                         height: getSize(10),
@@ -276,12 +274,14 @@ class DiscoverScreen extends StatelessWidget {
           children: [
             Text(
               "Best Specialists",
-              style: black18TitleTextStyle,
+              style: Theme.of(context).textTheme.headline4,
             ),
             Text(
               "View all",
-              style:
-                  black16TextStyle.copyWith(color: ColorConstants.primaryColor),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(color: ColorConstants.primaryColor),
             )
           ],
         ),
@@ -324,18 +324,13 @@ class DiscoverScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 5),
                         child: Text(
                           "Joseph Drake",
-                          style: black18TitleTextStyle.copyWith(
-                              fontSize: getSize(16)),
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          "Makeup Artist",
-                          style: black16TextStyle.copyWith(
-                              fontSize: getSize(13),
-                              color: ColorConstants.greyText),
-                        ),
+                        child: Text("Makeup Artist",
+                            style: Theme.of(context).textTheme.bodyText1),
                       ),
                       SizedBox(
                         height: getSize(10),

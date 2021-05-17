@@ -23,7 +23,7 @@ class NotificationScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "Notification",
-          style: black18TitleTextStyle,
+          style: Theme.of(context).textTheme.headline4,
         ),
         actions: [
           IconButton(
@@ -64,15 +64,10 @@ class NotificationScreen extends StatelessWidget {
                           children: [
                             Text(
                               "Sherman Shop",
-                              style: black18TitleTextStyle.copyWith(
-                                  fontSize: getSize(16)),
+                              style: Theme.of(context).textTheme.headline5,
                             ),
-                            Text(
-                              "Hi Jakson..",
-                              style: black16TextStyle.copyWith(
-                                  fontSize: getSize(13),
-                                  color: ColorConstants.greyText),
-                            ),
+                            Text("Hi Jakson..",
+                                style: Theme.of(context).textTheme.bodyText1),
                           ],
                         ),
                       ),
@@ -81,12 +76,8 @@ class NotificationScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(
-                          "Just Now",
-                          style: black16TextStyle.copyWith(
-                              fontSize: getSize(13),
-                              color: ColorConstants.greyText),
-                        ),
+                        Text("Just Now",
+                            style: Theme.of(context).textTheme.bodyText1),
                         Icon(
                           Icons.phone_in_talk_outlined,
                           color: ColorConstants.primaryColor,

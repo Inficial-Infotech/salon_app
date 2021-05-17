@@ -25,8 +25,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: ColorConstants.primaryColor,
+            selectedItemColor: Theme.of(context).primaryColor,
             unselectedItemColor: Colors.grey,
+            backgroundColor: Theme.of(context).backgroundColor,
             currentIndex: controller.selectedIndex,
             onTap: (value) {
               controller.onItemTapped(value);

@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:salon_app/app/ui/theme/app_colors.dart';
 import 'package:salon_app/app/ui/theme/app_text_theme.dart';
 
+import '../theme/app_colors.dart';
 import 'math_utils.dart';
 import 'math_utils.dart';
 
@@ -88,14 +89,17 @@ class _CommonTextfieldState extends State<CommonTextfield> {
         autofocus: widget.autoFocus ?? false,
         controller: widget.textOption.inputController ?? null,
         obscureText: this.obscureText,
-        style: black16TextStyle,
+        style: Theme.of(context).textTheme.bodyText1,
         keyboardType: widget.textOption.keyboardType ?? TextInputType.text,
         textCapitalization:
             widget.textOption.textCapitalization ?? TextCapitalization.none,
         cursorColor: ColorConstants.primaryColor,
         inputFormatters: widget.textOption.formatter ?? [],
         decoration: InputDecoration(
-          errorStyle: error16TextStyle,
+          errorStyle: Theme.of(context)
+              .textTheme
+              .bodyText1
+              .copyWith(color: ColorConstants.redColor),
           errorMaxLines: 3,
 //          fillColor: widget.textOption.fillColor ?? fromHex("#F6F6F6"),
           enabledBorder: OutlineInputBorder(
@@ -121,12 +125,9 @@ class _CommonTextfieldState extends State<CommonTextfield> {
 //             borderSide: BorderSide.none
 //         ),
           labelText: widget.textOption.labelText,
-          hintStyle: grey16HintTextStyle,
+          hintStyle: Theme.of(context).textTheme.bodyText1,
           hintText: widget.textOption.hintText,
-          labelStyle: TextStyle(
-            color: ColorConstants.textColor,
-            fontSize: getFontSize(16),
-          ),
+          labelStyle: Theme.of(context).textTheme.bodyText1,
           prefixIcon: widget.textOption.prefixWid,
           suffix: widget.textOption.postfixWidOnFocus,
           suffixIcon: (widget.textOption.isSecureTextField != null &&

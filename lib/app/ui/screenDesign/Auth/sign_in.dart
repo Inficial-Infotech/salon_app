@@ -64,7 +64,7 @@ class SignIn extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               LogIn.tr,
-                              style: black18TitleTextStyle,
+                              style: Theme.of(context).textTheme.headline4,
                             ),
                           ),
                           SizedBox(
@@ -82,7 +82,7 @@ class SignIn extends StatelessWidget {
                             alignment: Alignment.centerRight,
                             child: Text(
                               ForgotPassword.tr,
-                              style: black16TextStyle,
+                              style: Theme.of(context).textTheme.bodyText1,
                             ),
                           ),
                           SizedBox(
@@ -95,7 +95,7 @@ class SignIn extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               text: YouDontHaveAnAccount.tr,
-                              style: black16TextStyle,
+                              style: Theme.of(context).textTheme.bodyText1,
                               children: <TextSpan>[
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
@@ -104,10 +104,13 @@ class SignIn extends StatelessWidget {
                                       // Get.to(SignUp());
                                     },
                                   text: SIGNUP.tr,
-                                  style: black16TextStyle.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorConstants.primaryColor,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText1
+                                      .copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorConstants.primaryColor,
+                                      ),
                                 ),
                               ],
                             ),
@@ -220,7 +223,7 @@ class SignIn extends StatelessWidget {
           } else {
             controller.isEmailValid.value = true;
           }
-          controller.formKey.currentState.validate();
+          formKey.currentState.validate();
         }
       },
       validation: (text) {

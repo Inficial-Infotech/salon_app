@@ -5,6 +5,9 @@ import 'package:salon_app/app/ui/theme/app_colors.dart';
 import 'package:salon_app/app/ui/theme/app_text_theme.dart';
 import 'package:salon_app/app/ui/utils/math_utils.dart';
 
+import '../math_utils.dart';
+import '../math_utils.dart';
+
 class BaseList extends StatelessWidget {
   BaseList({Key key, this.controller, this.pagedListView}) : super(key: key);
 
@@ -33,7 +36,10 @@ class FirstPageErrorIndicator extends StatelessWidget {
       child: Center(
         child: Text(
           "Error",
-          style: black28BigLableTextStyle,
+          style: Theme.of(context)
+              .textTheme
+              .headline1
+              .copyWith(fontSize: getSize(26)),
         ),
       ),
     );
@@ -54,7 +60,7 @@ class NewPageErrorIndicator extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: getSize(15)),
           child: Text(
             "some thing went wrong!!",
-            style: black18TitleTextStyle,
+            style: Theme.of(context).textTheme.headline4,
           ),
         ),
       ),
@@ -84,12 +90,14 @@ class NewPageProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpinKitFadingCircle(
+      size: getSize(35),
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
+            shape: BoxShape.circle,
             color: index.isEven
                 ? ColorConstants.primaryColor
-                : ColorConstants.whiteColor,
+                : ColorConstants.primaryColor.withOpacity(0.2),
           ),
         );
       },

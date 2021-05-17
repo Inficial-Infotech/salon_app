@@ -7,7 +7,6 @@ import 'package:salon_app/app/ui/utils/dialogs.dart';
 import 'package:salon_app/app/ui/utils/pref_utils.dart';
 
 class SignInContoller extends GetxController {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final FocusNode emailFocusNode = FocusNode();

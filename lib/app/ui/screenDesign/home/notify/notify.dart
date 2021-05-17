@@ -30,14 +30,14 @@ class Notify extends StatelessWidget {
             padding: EdgeInsets.only(bottom: getSize(10)),
             child: Text(
               "Notify",
-              style: white20TitleTextStyle,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           Expanded(
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: ColorConstants.whiteColor,
+                color: Theme.of(context).backgroundColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(
                     getSize(25),
@@ -57,7 +57,7 @@ class Notify extends StatelessWidget {
                       pagingController: controller.pagingController,
                       builderDelegate: PagedChildBuilderDelegate(
                         itemBuilder: (context, item, index) {
-                          return getItem(item);
+                          return getItem(item, context);
                         },
                         firstPageErrorIndicatorBuilder: (_) =>
                             FirstPageErrorIndicator(
@@ -89,13 +89,13 @@ class Notify extends StatelessWidget {
     );
   }
 
-  getItem(NewApi model) {
+  getItem(NewApi model, context) {
     return Container(
       padding: EdgeInsets.only(bottom: getSize(20)),
       margin: EdgeInsets.only(top: getSize(10)),
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Colors.black54),
+          bottom: BorderSide(color: Theme.of(context).shadowColor),
         ),
       ),
       child: Row(
@@ -127,7 +127,10 @@ class Notify extends StatelessWidget {
                   Text(
                     model.name,
                     overflow: TextOverflow.ellipsis,
-                    style: blackBold16TextStyle,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1
+                        .copyWith(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: getSize(10),
@@ -144,7 +147,7 @@ class Notify extends StatelessWidget {
                       Expanded(
                         child: Text(
                           "301 Dorthy Walks,Chicago,Us.",
-                          style: gery14TextStyle,
+                          style: Theme.of(context).textTheme.bodyText2,
                         ),
                       )
                     ],
@@ -156,7 +159,7 @@ class Notify extends StatelessWidget {
                     children: [
                       Text(
                         "4.5",
-                        style: gery14TextStyle,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                       RatingBar.builder(
                         itemSize: getSize(16),
@@ -178,7 +181,7 @@ class Notify extends StatelessWidget {
                       ),
                       Text(
                         "7.5 km",
-                        style: gery14TextStyle,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ],
                   )

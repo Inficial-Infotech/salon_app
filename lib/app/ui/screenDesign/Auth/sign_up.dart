@@ -59,7 +59,7 @@ class SignUp extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               SIGNUP.tr,
-                              style: black18TitleTextStyle,
+                              style: Theme.of(context).textTheme.headline4,
                             ),
                           ),
                           SizedBox(
@@ -92,7 +92,7 @@ class SignUp extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               text: YouDontHaveAnAccount.tr,
-                              style: black16TextStyle,
+                              style: Theme.of(context).textTheme.bodyText1,
                               children: <TextSpan>[
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
@@ -100,10 +100,13 @@ class SignUp extends StatelessWidget {
                                       Get.toNamed(Routes.SIGNIN);
                                     },
                                   text: SIGNIN.tr,
-                                  style: black16TextStyle.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorConstants.primaryColor,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText1
+                                      .copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorConstants.primaryColor,
+                                      ),
                                 ),
                               ],
                             ),

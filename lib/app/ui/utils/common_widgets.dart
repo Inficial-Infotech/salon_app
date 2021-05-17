@@ -15,12 +15,7 @@ getTitleText(
 }) {
   return Text(
     text,
-    style: commonTextStyle.copyWith(
-      color: color,
-      fontFamily: 'CerebriSans',
-      fontSize: fontSize == null ? getSize(16) : fontSize,
-      fontWeight: fontweight == null ? FontWeight.w600 : fontweight,
-    ),
+    style: Theme.of(context).textTheme.bodyText1,
     textAlign: alignment,
   );
 }
@@ -99,10 +94,10 @@ getBackButton(
   );*/
 }
 
-getBoxShadow() {
+getBoxShadow(context) {
   return [
     BoxShadow(
-        color: ColorConstants.shadowColor,
+        color: Theme.of(context).shadowColor,
         // offset: Offset(5, 5),
         blurRadius: 5,
         spreadRadius: 2)
